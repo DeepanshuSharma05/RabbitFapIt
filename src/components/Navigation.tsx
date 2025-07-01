@@ -16,7 +16,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-red-500 to-red-300 bg-clip-text text-transparent">
-            Dark Confessions
+            RabitFapit
           </Link>
 
           {/* Desktop Menu */}
