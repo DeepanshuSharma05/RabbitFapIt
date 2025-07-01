@@ -85,47 +85,45 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center text-red-400">Latest Stories</h2>
           
-          <div className="grid gap-8 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
               <article key={post.id} className="group">
                 <Link to={`/post/${post.id}`} className="block">
                   <div className="bg-gradient-to-br from-gray-900 to-red-950/20 border border-red-900/30 rounded-lg overflow-hidden hover:border-red-600/50 transition-all duration-300 hover:shadow-lg hover:shadow-red-900/20">
-                    <div className="flex flex-col lg:flex-row">
-                      {/* Square Cover Image */}
-                      <div className="lg:w-80 lg:h-80 h-64 w-full flex-shrink-0">
-                        <img 
-                          src={post.coverImage} 
-                          alt={post.title}
-                          className="w-full h-full object-cover"
-                        />
+                    {/* Square Cover Image */}
+                    <div className="w-full aspect-square">
+                      <img 
+                        src={post.coverImage} 
+                        alt={post.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="p-6">
+                      <div className="flex items-center gap-4 text-sm text-gray-400 mb-3">
+                        <time>{new Date(post.date).toLocaleDateString('en-US', { 
+                          year: 'numeric', 
+                          month: 'long', 
+                          day: 'numeric' 
+                        })}</time>
+                        <span>•</span>
+                        <span>{post.readTime}</span>
                       </div>
                       
-                      {/* Content */}
-                      <div className="p-8 flex-1">
-                        <div className="flex items-center gap-4 text-sm text-gray-400 mb-4">
-                          <time>{new Date(post.date).toLocaleDateString('en-US', { 
-                            year: 'numeric', 
-                            month: 'long', 
-                            day: 'numeric' 
-                          })}</time>
-                          <span>•</span>
-                          <span>{post.readTime}</span>
-                        </div>
-                        
-                        <h3 className="text-2xl md:text-3xl font-bold text-red-300 mb-4 group-hover:text-red-200 transition-colors">
-                          {post.title}
-                        </h3>
-                        
-                        <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                          {post.excerpt}
-                        </p>
-                        
-                        <div className="flex items-center text-red-400 font-semibold group-hover:text-red-300 transition-colors">
-                          <span>Read More</span>
-                          <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                          </svg>
-                        </div>
+                      <h3 className="text-xl font-bold text-red-300 mb-3 group-hover:text-red-200 transition-colors">
+                        {post.title}
+                      </h3>
+                      
+                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                        {post.excerpt}
+                      </p>
+                      
+                      <div className="flex items-center text-red-400 font-semibold group-hover:text-red-300 transition-colors">
+                        <span>Read More</span>
+                        <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
                       </div>
                     </div>
                   </div>
