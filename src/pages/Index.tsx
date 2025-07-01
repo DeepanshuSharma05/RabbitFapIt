@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
@@ -38,6 +37,86 @@ const blogPosts = [
     date: '2024-01-01',
     readTime: '7 min read',
     coverImage: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&crop=center'
+  },
+  {
+    id: 'silken-whispers',
+    title: 'Silken Whispers',
+    excerpt: 'Soft touches and gentle caresses reveal the power of tenderness in the most unexpected moments...',
+    date: '2023-12-28',
+    readTime: '5 min read',
+    coverImage: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=400&fit=crop&crop=center'
+  },
+  {
+    id: 'electric-dreams',
+    title: 'Electric Dreams',
+    excerpt: 'When technology meets desire, the boundaries between reality and fantasy become beautifully blurred...',
+    date: '2023-12-25',
+    readTime: '9 min read',
+    coverImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=400&fit=crop&crop=center'
+  },
+  {
+    id: 'desert-heat',
+    title: 'Desert Heat',
+    excerpt: 'In the scorching embrace of endless dunes, passion burns hotter than the midday sun...',
+    date: '2023-12-22',
+    readTime: '7 min read',
+    coverImage: 'https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?w=400&h=400&fit=crop&crop=center'
+  },
+  {
+    id: 'golden-hour',
+    title: 'Golden Hour',
+    excerpt: 'As twilight paints the sky in shades of amber, two souls discover the magic of perfect timing...',
+    date: '2023-12-20',
+    readTime: '6 min read',
+    coverImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=400&fit=crop&crop=center'
+  },
+  {
+    id: 'feline-grace',
+    title: 'Feline Grace',
+    excerpt: 'With movements like liquid silk and eyes that hold ancient secrets, she prowls through the night...',
+    date: '2023-12-18',
+    readTime: '8 min read',
+    coverImage: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=400&fit=crop&crop=center'
+  },
+  {
+    id: 'neon-nights',
+    title: 'Neon Nights',
+    excerpt: 'City lights reflect off rain-soaked streets as strangers become lovers in the urban maze...',
+    date: '2023-12-15',
+    readTime: '11 min read',
+    coverImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=400&fit=crop&crop=center'
+  },
+  {
+    id: 'mirror-mirror',
+    title: 'Mirror Mirror',
+    excerpt: 'Reflections reveal more than just physical beauty as she discovers her deepest desires...',
+    date: '2023-12-12',
+    readTime: '6 min read',
+    coverImage: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=400&h=400&fit=crop&crop=center'
+  },
+  {
+    id: 'ocean-waves',
+    title: 'Ocean Waves',
+    excerpt: 'The rhythmic crash of waves against the shore mirrors the passionate rhythm of two hearts as one...',
+    date: '2023-12-10',
+    readTime: '9 min read',
+    coverImage: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=400&fit=crop&crop=center'
+  },
+  {
+    id: 'sapphire-dreams',
+    title: 'Sapphire Dreams',
+    excerpt: 'Blue as the deepest ocean, her eyes hold promises of adventures that exist only in dreams...',
+    date: '2023-12-08',
+    readTime: '7 min read',
+    coverImage: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&crop=center'
+  },
+  {
+    id: 'ivory-tower',
+    title: 'Ivory Tower',
+    excerpt: 'High above the world in her pristine sanctuary, she learns that perfection has its own temptations...',
+    date: '2023-12-05',
+    readTime: '10 min read',
+    coverImage: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=400&fit=crop&crop=center'
   }
 ];
 
@@ -97,13 +176,13 @@ const Index = () => {
       {/* Blog Posts Section */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center text-red-400">Latest Stories</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center text-red-400">Latest</h2>
           
           <SearchBar onSearch={handleSearch} />
           
           {filteredPosts.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-gray-400 text-lg">No stories found matching your search.</p>
+              <p className="text-gray-400 text-lg">No posts found matching your search.</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
