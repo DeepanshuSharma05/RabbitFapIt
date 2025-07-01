@@ -29,22 +29,6 @@ const Navigation = () => {
             >
               Home
             </Link>
-            <Link 
-              to="/about" 
-              className={`transition-colors hover:text-red-400 ${
-                isActive('/about') ? 'text-red-400' : 'text-gray-300'
-              }`}
-            >
-              About
-            </Link>
-            <Link 
-              to="/contact" 
-              className={`transition-colors hover:text-red-400 ${
-                isActive('/contact') ? 'text-red-400' : 'text-gray-300'
-              }`}
-            >
-              Contact
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -74,24 +58,6 @@ const Navigation = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
-              </Link>
-              <Link 
-                to="/about" 
-                className={`transition-colors hover:text-red-400 ${
-                  isActive('/about') ? 'text-red-400' : 'text-gray-300'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link 
-                to="/contact" 
-                className={`transition-colors hover:text-red-400 ${
-                  isActive('/contact') ? 'text-red-400' : 'text-gray-300'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
               </Link>
             </div>
           </div>

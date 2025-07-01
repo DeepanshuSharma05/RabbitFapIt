@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import AgeGate from '../components/AgeGate';
+import SearchBar from '../components/SearchBar';
 
 const blogPosts = [
   {
@@ -42,6 +43,7 @@ const blogPosts = [
 
 const Index = () => {
   const [showAgeGate, setShowAgeGate] = useState(true);
+  const [filteredPosts, setFilteredPosts] = useState(blogPosts);
 
   useEffect(() => {
     const ageVerified = localStorage.getItem('ageVerified');
@@ -56,6 +58,18 @@ const Index = () => {
       setShowAgeGate(false);
     } else {
       window.location.href = 'https://www.google.com';
+    }
+  };
+
+  const handleSearch = (query: string) => {
+    if (!query) {
+      setFilteredPosts(blogPosts);
+    } else {
+      const filtered = blogPosts.filter(post =>
+        post.title.toLowerCase().includes(query.toLowerCase()) ||
+        post.excerpt.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilteredPosts(filtered);
     }
   };
 
@@ -85,52 +99,60 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center text-red-400">Latest Stories</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <article key={post.id} className="group">
-                <Link to={`/post/${post.id}`} className="block">
-                  <div className="bg-gradient-to-br from-gray-900 to-red-950/20 border border-red-900/30 rounded-lg overflow-hidden hover:border-red-600/50 transition-all duration-300 hover:shadow-lg hover:shadow-red-900/20">
-                    {/* Square Cover Image */}
-                    <div className="w-full aspect-square">
-                      <img 
-                        src={post.coverImage} 
-                        alt={post.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="p-6">
-                      <div className="flex items-center gap-4 text-sm text-gray-400 mb-3">
-                        <time>{new Date(post.date).toLocaleDateString('en-US', { 
-                          year: 'numeric', 
-                          month: 'long', 
-                          day: 'numeric' 
-                        })}</time>
-                        <span>•</span>
-                        <span>{post.readTime}</span>
+          <SearchBar onSearch={handleSearch} />
+          
+          {filteredPosts.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-gray-400 text-lg">No stories found matching your search.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredPosts.map((post) => (
+                <article key={post.id} className="group">
+                  <Link to={`/post/${post.id}`} className="block">
+                    <div className="bg-gradient-to-br from-gray-900 to-red-950/20 border border-red-900/30 rounded-lg overflow-hidden hover:border-red-600/50 transition-all duration-300 hover:shadow-lg hover:shadow-red-900/20">
+                      {/* Square Cover Image */}
+                      <div className="w-full aspect-square">
+                        <img 
+                          src={post.coverImage} 
+                          alt={post.title}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       
-                      <h3 className="text-xl font-bold text-red-300 mb-3 group-hover:text-red-200 transition-colors">
-                        {post.title}
-                      </h3>
-                      
-                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                        {post.excerpt}
-                      </p>
-                      
-                      <div className="flex items-center text-red-400 font-semibold group-hover:text-red-300 transition-colors">
-                        <span>Read More</span>
-                        <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
+                      {/* Content */}
+                      <div className="p-6">
+                        <div className="flex items-center gap-4 text-sm text-gray-400 mb-3">
+                          <time>{new Date(post.date).toLocaleDateString('en-US', { 
+                            year: 'numeric', 
+                            month: 'long', 
+                            day: 'numeric' 
+                          })}</time>
+                          <span>•</span>
+                          <span>{post.readTime}</span>
+                        </div>
+                        
+                        <h3 className="text-xl font-bold text-red-300 mb-3 group-hover:text-red-200 transition-colors">
+                          {post.title}
+                        </h3>
+                        
+                        <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                          {post.excerpt}
+                        </p>
+                        
+                        <div className="flex items-center text-red-400 font-semibold group-hover:text-red-300 transition-colors">
+                          <span>Read More</span>
+                          <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                          </svg>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              </article>
-            ))}
-          </div>
+                  </Link>
+                </article>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
