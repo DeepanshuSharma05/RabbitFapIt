@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Play } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import AgeGate from '../components/AgeGate';
@@ -12,7 +13,7 @@ const blogPosts = [
     excerpt: 'In the symphony of the night, hearts compose their most intimate melodies, each note a whispered promise...',
     date: '2024-01-20',
     readTime: '9 min read',
-    coverImage: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=400&h=400&fit=crop&crop=center'
+    coverImage: 'https://images.unsplash.com/photo-1494790108755-2616c4e2e29b?w=400&h=400&fit=crop&crop=center&blur=5'
   },
   {
     id: 'forbidden-desires',
@@ -20,7 +21,7 @@ const blogPosts = [
     excerpt: 'An exploration of the hidden depths of human passion and the boundaries we dare not cross...',
     date: '2024-01-15',
     readTime: '8 min read',
-    coverImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=400&fit=crop&crop=center'
+    coverImage: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=400&fit=crop&crop=center&blur=5'
   },
   {
     id: 'midnight-confessions',
@@ -28,7 +29,7 @@ const blogPosts = [
     excerpt: 'In the darkness of night, secrets are whispered and truths are revealed in ways daylight never allows...',
     date: '2024-01-10',
     readTime: '6 min read',
-    coverImage: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=400&h=400&fit=crop&crop=center'
+    coverImage: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop&crop=center&blur=5'
   },
   {
     id: 'velvet-shadows',
@@ -36,7 +37,7 @@ const blogPosts = [
     excerpt: 'Between pleasure and pain lies a delicate balance that few dare to explore. This is that journey...',
     date: '2024-01-05',
     readTime: '10 min read',
-    coverImage: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=400&fit=crop&crop=center'
+    coverImage: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&h=400&fit=crop&crop=center&blur=5'
   },
   {
     id: 'crimson-nights',
@@ -44,7 +45,7 @@ const blogPosts = [
     excerpt: 'When darkness falls and inhibitions fade, the most intense stories begin to unfold in shades of crimson...',
     date: '2024-01-01',
     readTime: '7 min read',
-    coverImage: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&crop=center'
+    coverImage: 'https://images.unsplash.com/photo-1506863530036-1efeddceb993?w=400&h=400&fit=crop&crop=center&blur=5'
   },
   {
     id: 'silken-whispers',
@@ -52,7 +53,7 @@ const blogPosts = [
     excerpt: 'Soft touches and gentle caresses reveal the power of tenderness in the most unexpected moments...',
     date: '2023-12-28',
     readTime: '5 min read',
-    coverImage: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=400&fit=crop&crop=center'
+    coverImage: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=400&fit=crop&crop=center&blur=5'
   },
   {
     id: 'electric-dreams',
@@ -60,7 +61,7 @@ const blogPosts = [
     excerpt: 'When technology meets desire, the boundaries between reality and fantasy become beautifully blurred...',
     date: '2023-12-25',
     readTime: '9 min read',
-    coverImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=400&fit=crop&crop=center'
+    coverImage: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop&crop=center&blur=5'
   },
   {
     id: 'desert-heat',
@@ -68,7 +69,7 @@ const blogPosts = [
     excerpt: 'In the scorching embrace of endless dunes, passion burns hotter than the midday sun...',
     date: '2023-12-22',
     readTime: '7 min read',
-    coverImage: 'https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?w=400&h=400&fit=crop&crop=center'
+    coverImage: 'https://images.unsplash.com/photo-1499557354967-2b2d8910bcca?w=400&h=400&fit=crop&crop=center&blur=5'
   },
   {
     id: 'golden-hour',
@@ -76,7 +77,7 @@ const blogPosts = [
     excerpt: 'As twilight paints the sky in shades of amber, two souls discover the magic of perfect timing...',
     date: '2023-12-20',
     readTime: '6 min read',
-    coverImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=400&fit=crop&crop=center'
+    coverImage: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&h=400&fit=crop&crop=center&blur=5'
   },
   {
     id: 'feline-grace',
@@ -84,7 +85,7 @@ const blogPosts = [
     excerpt: 'With movements like liquid silk and eyes that hold ancient secrets, she prowls through the night...',
     date: '2023-12-18',
     readTime: '8 min read',
-    coverImage: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=400&fit=crop&crop=center'
+    coverImage: 'https://images.unsplash.com/photo-1503104834685-7205e8607eb9?w=400&h=400&fit=crop&crop=center&blur=5'
   },
   {
     id: 'neon-nights',
@@ -92,7 +93,7 @@ const blogPosts = [
     excerpt: 'City lights reflect off rain-soaked streets as strangers become lovers in the urban maze...',
     date: '2023-12-15',
     readTime: '11 min read',
-    coverImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=400&fit=crop&crop=center'
+    coverImage: 'https://images.unsplash.com/photo-1520637836862-4d197d17c55a?w=400&h=400&fit=crop&crop=center&blur=5'
   },
   {
     id: 'mirror-mirror',
@@ -100,7 +101,7 @@ const blogPosts = [
     excerpt: 'Reflections reveal more than just physical beauty as she discovers her deepest desires...',
     date: '2023-12-12',
     readTime: '6 min read',
-    coverImage: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=400&h=400&fit=crop&crop=center'
+    coverImage: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=400&fit=crop&crop=center&blur=5'
   },
   {
     id: 'ocean-waves',
@@ -108,7 +109,7 @@ const blogPosts = [
     excerpt: 'The rhythmic crash of waves against the shore mirrors the passionate rhythm of two hearts as one...',
     date: '2023-12-10',
     readTime: '9 min read',
-    coverImage: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=400&fit=crop&crop=center'
+    coverImage: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop&crop=center&blur=5'
   },
   {
     id: 'sapphire-dreams',
@@ -116,7 +117,7 @@ const blogPosts = [
     excerpt: 'Blue as the deepest ocean, her eyes hold promises of adventures that exist only in dreams...',
     date: '2023-12-08',
     readTime: '7 min read',
-    coverImage: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&crop=center'
+    coverImage: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=400&h=400&fit=crop&crop=center&blur=5'
   },
   {
     id: 'ivory-tower',
@@ -124,7 +125,7 @@ const blogPosts = [
     excerpt: 'High above the world in her pristine sanctuary, she learns that perfection has its own temptations...',
     date: '2023-12-05',
     readTime: '10 min read',
-    coverImage: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=400&fit=crop&crop=center'
+    coverImage: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=center&blur=5'
   }
 ];
 
@@ -198,13 +199,18 @@ const Index = () => {
                 <article key={post.id} className="group">
                   <Link to={`/post/${post.id}`} className="block">
                     <div className="bg-gradient-to-br from-gray-900 to-red-950/20 border border-red-900/30 rounded-lg overflow-hidden hover:border-red-600/50 transition-all duration-300 hover:shadow-lg hover:shadow-red-900/20">
-                      {/* Square Cover Image */}
-                      <div className="w-full aspect-square">
+                      {/* Square Cover Image with Play Button */}
+                      <div className="w-full aspect-square relative">
                         <img 
                           src={post.coverImage} 
                           alt={post.title}
                           className="w-full h-full object-cover"
                         />
+                        <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-all duration-300">
+                          <div className="w-16 h-16 bg-red-600/90 rounded-full flex items-center justify-center group-hover:bg-red-500 transition-all duration-300 backdrop-blur-sm">
+                            <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                          </div>
+                        </div>
                       </div>
                       
                       {/* Content */}
