@@ -7,6 +7,14 @@ import SearchBar from '../components/SearchBar';
 
 const blogPosts = [
   {
+    id: 'midnight-serenade',
+    title: 'Midnight Serenade', 
+    excerpt: 'In the symphony of the night, hearts compose their most intimate melodies, each note a whispered promise...',
+    date: '2024-01-20',
+    readTime: '9 min read',
+    coverImage: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=400&h=400&fit=crop&crop=center'
+  },
+  {
     id: 'forbidden-desires',
     title: 'Forbidden Desires',
     excerpt: 'An exploration of the hidden depths of human passion and the boundaries we dare not cross...',

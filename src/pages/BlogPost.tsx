@@ -1,10 +1,36 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 
 const blogPosts = {
+  'midnight-serenade': {
+    title: 'Midnight Serenade',
+    date: '2024-01-20',
+    readTime: '9 min read',
+    coverImage: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=600&h=600&fit=crop&crop=center',
+    content: `
+      <p class="text-xl text-gray-300 leading-relaxed mb-8">In the velvet darkness of midnight, the city transforms into a symphony of whispered desires and unspoken promises.</p>
+
+      <p class="text-gray-300 leading-relaxed mb-6">The piano keys felt cool beneath her fingertips as she began to play, each note floating through the empty apartment like a prayer to the night. She had always played better in darkness, when the weight of watching eyes lifted and her soul could speak through music.</p>
+
+      <p class="text-gray-300 leading-relaxed mb-6">He stood in the doorway, transfixed by the melody that seemed to pull secrets from the very air. This wasn't just music – it was confession, seduction, and surrender all woven into a single, haunting tune that made his chest tighten with longing.</p>
+
+      <p class="text-gray-300 leading-relaxed mb-6">"Don't stop," he whispered as her hands paused above the keys. The silence stretched between them like a held breath, pregnant with possibility.</p>
+
+      <p class="text-gray-300 leading-relaxed mb-6">She smiled without turning around, her fingers finding a new melody – slower now, more intimate. This was their language, the way they spoke when words weren't enough. Each phrase was a question, each harmony an answer, each crescendo a promise of what the night might hold.</p>
+
+      <p class="text-gray-300 leading-relaxed mb-6">He moved closer, drawn by the magnetic pull of her music. The moonlight streaming through the windows painted silver patterns on her bare shoulders, and he found himself memorizing every curve, every shadow, every breath that shaped the melody.</p>
+
+      <p class="text-gray-300 leading-relaxed mb-6">"Play me something dangerous," he requested, his voice rough with desire. She laughed, a sound like wind chimes in a summer storm, and her fingers shifted to something darker, more primal.</p>
+
+      <p class="text-gray-300 leading-relaxed mb-6">The music wrapped around them both now, creating a cocoon of sound and sensation. Time moved differently here, in this space between heartbeats, where every note was a caress and every pause a kiss waiting to happen.</p>
+
+      <p class="text-gray-300 leading-relaxed mb-6">When the last note finally faded into silence, they remained frozen in the moment, neither daring to move and break the spell. The night had given them something precious – a perfect moment of understanding, where souls touched through music and hearts beat in perfect synchrony.</p>
+
+      <p class="text-gray-300 leading-relaxed mb-8">"Again," he whispered, and she smiled, her fingers already finding their way back to the keys. Some serenades, she realized, were meant to last until dawn.</p>
+    `
+  },
   'forbidden-desires': {
     title: 'Forbidden Desires',
     date: '2024-01-15',
