@@ -176,7 +176,7 @@ const Index = () => {
           <div className="flex items-center justify-center gap-3 mb-6">
             <Rabbit className="w-12 h-12 text-pink-400 fill-pink-400" />
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-pink-500 to-pink-300 bg-clip-text text-transparent">
-              RabitFapit
+              rabbitfapit
             </h1>
           </div>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
@@ -202,9 +202,9 @@ const Index = () => {
               {filteredPosts.map((post) => (
                 <article key={post.id} className="group">
                   <Link to={`/post/${post.id}`} className="block">
-                    <div className="bg-white border border-pink-200/30 rounded-lg overflow-hidden hover:border-pink-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-pink-400/20">
+                    <div className="bg-white border border-pink-200/30 rounded-lg overflow-hidden hover:border-pink-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-pink-400/20 h-full flex flex-col">
                       {/* Square Cover Image with Play Button */}
-                      <div className="w-full aspect-square relative">
+                      <div className="w-full aspect-square relative flex-shrink-0">
                         <img 
                           src={post.coverImage} 
                           alt={post.title}
@@ -218,7 +218,7 @@ const Index = () => {
                       </div>
                       
                       {/* Content */}
-                      <div className="p-6 bg-white">
+                      <div className="p-6 bg-white flex-grow flex flex-col">
                         <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
                           <time>{new Date(post.date).toLocaleDateString('en-US', { 
                             year: 'numeric', 
@@ -233,11 +233,11 @@ const Index = () => {
                           {post.title}
                         </h3>
                         
-                        <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                        <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">
                           {post.excerpt}
                         </p>
                         
-                        <div className="flex items-center text-pink-500 font-semibold group-hover:text-pink-400 transition-colors">
+                        <div className="flex items-center text-pink-500 font-semibold group-hover:text-pink-400 transition-colors mt-auto">
                           <span>Read More</span>
                           <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

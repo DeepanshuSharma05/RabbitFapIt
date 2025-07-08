@@ -19,7 +19,7 @@ const Navigation = () => {
           <Link to="/" className="flex items-center gap-2">
             <Rabbit className="w-8 h-8 text-pink-500 fill-pink-500" />
             <span className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-pink-300 bg-clip-text text-transparent">
-              RabitFapit
+              rabbitfapit
             </span>
           </Link>
 

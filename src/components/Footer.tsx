@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto text-center">
         <div className="mb-4">
           <p className="text-gray-500 mb-2">
-            © {currentYear} RabitFapit. All rights reserved.
+            © {currentYear} rabbitfapit. All rights reserved.
           </p>
           <p className="text-pink-500 font-semibold text-sm">
             ⚠️ This website contains adult-themed content. 18+ only.
