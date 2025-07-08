@@ -208,7 +208,7 @@ const Index = () => {
                         <img 
                           src={post.coverImage} 
                           alt={post.title}
-                          className="w-full h-full object-cover filter blur-sm"
+                          className="w-full h-full object-cover filter blur-md"
                         />
                         <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-all duration-300">
                           <div className="w-16 h-16 bg-pink-600/90 rounded-full flex items-center justify-center group-hover:bg-pink-500 transition-all duration-300 backdrop-blur-sm">

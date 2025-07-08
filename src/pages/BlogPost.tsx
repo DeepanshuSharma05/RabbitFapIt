@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Play } from 'lucide-react';
@@ -186,7 +187,7 @@ const BlogPost = () => {
                 <img 
                   src={post.coverImage} 
                   alt={post.title}
-                  className="w-full h-full object-cover filter blur-sm"
+                  className="w-full h-full object-cover filter blur-md"
                 />
                 <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
                   <div className="w-20 h-20 bg-pink-600/90 rounded-full flex items-center justify-center backdrop-blur-sm">
