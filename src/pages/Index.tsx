@@ -198,10 +198,10 @@ const Index = () => {
               <p className="text-gray-400 text-lg">No posts found matching your search.</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredPosts.map((post) => (
-                <article key={post.id} className="group">
-                  <Link to={`/post/${post.id}`} className="block">
+                <article key={post.id} className="group h-full">
+                  <Link to={`/post/${post.id}`} className="block h-full">
                     <div className="bg-white border border-pink-200/30 rounded-lg overflow-hidden hover:border-pink-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-pink-400/20 h-full flex flex-col">
                       {/* Square Cover Image with Play Button */}
                       <div className="w-full aspect-square relative flex-shrink-0">
@@ -229,15 +229,15 @@ const Index = () => {
                           <span>{post.readTime}</span>
                         </div>
                         
-                        <h3 className="text-xl font-bold text-pink-600 mb-3 group-hover:text-pink-500 transition-colors">
+                        <h3 className="text-xl font-bold text-pink-600 mb-3 group-hover:text-pink-500 transition-colors line-clamp-2">
                           {post.title}
                         </h3>
                         
-                        <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">
+                        <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
                           {post.excerpt}
                         </p>
                         
-                        <div className="flex items-center text-pink-500 font-semibold group-hover:text-pink-400 transition-colors mt-auto">
+                        <div className="flex items-center text-pink-500 font-semibold group-hover:text-pink-400 transition-colors mt-auto pt-2">
                           <span>Read More</span>
                           <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
