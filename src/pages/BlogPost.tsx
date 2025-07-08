@@ -9,7 +9,7 @@ const blogPosts = {
     title: 'Midnight Serenade',
     date: '2024-01-20',
     readTime: '9 min read',
-    coverImage: 'https://images.unsplash.com/photo-1494790108755-2616c4e2e29b?w=600&h=600&fit=crop&crop=center&blur=5',
+    coverImage: '/lovable-uploads/3e051e23-9e35-4a6a-ad25-9c06498ac132.png',
     content: `
       <p class="text-xl text-gray-300 leading-relaxed mb-8">In the velvet darkness of midnight, the city transforms into a symphony of whispered desires and unspoken promises.</p>
 
@@ -36,7 +36,7 @@ const blogPosts = {
     title: 'Forbidden Desires',
     date: '2024-01-15',
     readTime: '8 min read',
-    coverImage: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&h=600&fit=crop&crop=center&blur=5',
+    coverImage: '/lovable-uploads/f6ef997f-bda9-4746-99ba-bee0982205bd.png',
     content: `
       <p class="text-xl text-gray-300 leading-relaxed mb-8">The human heart is a labyrinth of wants and needs, some whispered in daylight, others hidden in the deepest chambers of our souls.</p>
 
@@ -61,7 +61,7 @@ const blogPosts = {
     title: 'Midnight Confessions',
     date: '2024-01-10',
     readTime: '6 min read',
-    coverImage: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&h=600&fit=crop&crop=center&blur=5',
+    coverImage: '/lovable-uploads/3ad660f5-65ea-4458-b6e6-f183c25b62c9.png',
     content: `
       <p class="text-xl text-gray-300 leading-relaxed mb-8">There's something about the witching hour that strips away pretense, leaving only raw honesty in its wake.</p>
 
@@ -84,7 +84,7 @@ const blogPosts = {
     title: 'Velvet Shadows',
     date: '2024-01-05',
     readTime: '10 min read',
-    coverImage: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&h=600&fit=crop&crop=center&blur=5',
+    coverImage: '/lovable-uploads/6e65b3bb-094b-465a-96f4-75b9a7e48e20.png',
     content: `
       <p class="text-xl text-gray-300 leading-relaxed mb-8">Between pleasure and pain lies a territory few dare to explore – a realm where sensation transcends the physical and becomes something approaching the divine.</p>
 
@@ -111,7 +111,7 @@ const blogPosts = {
     title: 'Crimson Nights',
     date: '2024-01-01',
     readTime: '7 min read',
-    coverImage: 'https://images.unsplash.com/photo-1506863530036-1efeddceb993?w=600&h=600&fit=crop&crop=center&blur=5',
+    coverImage: '/lovable-uploads/ec99a2b4-5e20-4d72-adb1-33a607045350.png',
     content: `
       <p class="text-xl text-gray-300 leading-relaxed mb-8">When darkness falls and inhibitions fade, the most intense stories begin to unfold in shades of crimson.</p>
 
@@ -145,9 +145,9 @@ const BlogPost = () => {
       <div className="min-h-screen bg-black text-gray-100">
         <Navigation />
         <div className="py-20 px-4 text-center">
-          <h1 className="text-4xl font-bold text-red-400 mb-4">Post Not Found</h1>
+          <h1 className="text-4xl font-bold text-pink-400 mb-4">Post Not Found</h1>
           <p className="text-gray-300 mb-8">The story you're looking for doesn't exist.</p>
-          <Link to="/" className="text-red-400 hover:text-red-300 font-semibold">
+          <Link to="/" className="text-pink-400 hover:text-pink-300 font-semibold">
             Return to Home
           </Link>
         </div>
@@ -164,7 +164,7 @@ const BlogPost = () => {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <header className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-500 to-red-300 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-pink-500 to-pink-300 bg-clip-text text-transparent">
               {post.title}
             </h1>
             
@@ -178,18 +178,18 @@ const BlogPost = () => {
               <span>{post.readTime}</span>
             </div>
             
-            <div className="w-24 h-1 bg-red-600 mx-auto mb-12"></div>
+            <div className="w-24 h-1 bg-pink-600 mx-auto mb-12"></div>
             
             {/* Square Cover Image with Play Button */}
             <div className="flex justify-center mb-12">
-              <div className="w-80 h-80 md:w-96 md:h-96 rounded-lg overflow-hidden border border-red-900/30 relative">
+              <div className="w-80 h-80 md:w-96 md:h-96 rounded-lg overflow-hidden border border-pink-400/30 relative">
                 <img 
                   src={post.coverImage} 
                   alt={post.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover filter blur-sm"
                 />
                 <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-red-600/90 rounded-full flex items-center justify-center backdrop-blur-sm">
+                  <div className="w-20 h-20 bg-pink-600/90 rounded-full flex items-center justify-center backdrop-blur-sm">
                     <Play className="w-10 h-10 text-white ml-1" fill="white" />
                   </div>
                 </div>
@@ -198,9 +198,9 @@ const BlogPost = () => {
           </header>
 
           {/* Content */}
-          <div className="bg-gradient-to-br from-gray-900 to-red-950/20 border border-red-900/30 rounded-lg p-8 md:p-12">
+          <div className="bg-white border border-pink-200/30 rounded-lg p-8 md:p-12">
             <div 
-              className="prose prose-lg prose-invert max-w-none"
+              className="prose prose-lg max-w-none text-gray-800"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </div>
@@ -209,7 +209,7 @@ const BlogPost = () => {
           <div className="mt-16 text-center">
             <Link 
               to="/" 
-              className="inline-flex items-center text-red-400 hover:text-red-300 font-semibold transition-colors"
+              className="inline-flex items-center text-pink-400 hover:text-pink-300 font-semibold transition-colors"
             >
               <svg className="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />

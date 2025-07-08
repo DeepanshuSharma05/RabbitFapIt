@@ -30,7 +30,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
             value={searchQuery}
             onChange={handleInputChange}
             placeholder="Search..."
-            className="w-full pl-10 pr-4 py-3 bg-gray-800 border border-red-900/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors"
+            className="w-full pl-10 pr-4 py-3 bg-white border border-pink-200 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-pink-400 transition-colors"
           />
         </div>
       </form>

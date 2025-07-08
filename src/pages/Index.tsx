@@ -1,6 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Play } from 'lucide-react';
+import { Play, Rabbit } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import AgeGate from '../components/AgeGate';
@@ -13,7 +14,7 @@ const blogPosts = [
     excerpt: 'In the symphony of the night, hearts compose their most intimate melodies, each note a whispered promise...',
     date: '2024-01-20',
     readTime: '9 min read',
-    coverImage: 'https://images.unsplash.com/photo-1494790108755-2616c4e2e29b?w=400&h=400&fit=crop&crop=center&blur=5'
+    coverImage: '/lovable-uploads/3e051e23-9e35-4a6a-ad25-9c06498ac132.png'
   },
   {
     id: 'forbidden-desires',
@@ -21,7 +22,7 @@ const blogPosts = [
     excerpt: 'An exploration of the hidden depths of human passion and the boundaries we dare not cross...',
     date: '2024-01-15',
     readTime: '8 min read',
-    coverImage: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=400&fit=crop&crop=center&blur=5'
+    coverImage: '/lovable-uploads/f6ef997f-bda9-4746-99ba-bee0982205bd.png'
   },
   {
     id: 'midnight-confessions',
@@ -29,7 +30,7 @@ const blogPosts = [
     excerpt: 'In the darkness of night, secrets are whispered and truths are revealed in ways daylight never allows...',
     date: '2024-01-10',
     readTime: '6 min read',
-    coverImage: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop&crop=center&blur=5'
+    coverImage: '/lovable-uploads/3ad660f5-65ea-4458-b6e6-f183c25b62c9.png'
   },
   {
     id: 'velvet-shadows',
@@ -37,7 +38,7 @@ const blogPosts = [
     excerpt: 'Between pleasure and pain lies a delicate balance that few dare to explore. This is that journey...',
     date: '2024-01-05',
     readTime: '10 min read',
-    coverImage: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&h=400&fit=crop&crop=center&blur=5'
+    coverImage: '/lovable-uploads/6e65b3bb-094b-465a-96f4-75b9a7e48e20.png'
   },
   {
     id: 'crimson-nights',
@@ -45,7 +46,7 @@ const blogPosts = [
     excerpt: 'When darkness falls and inhibitions fade, the most intense stories begin to unfold in shades of crimson...',
     date: '2024-01-01',
     readTime: '7 min read',
-    coverImage: 'https://images.unsplash.com/photo-1506863530036-1efeddceb993?w=400&h=400&fit=crop&crop=center&blur=5'
+    coverImage: '/lovable-uploads/ec99a2b4-5e20-4d72-adb1-33a607045350.png'
   },
   {
     id: 'silken-whispers',
@@ -53,7 +54,7 @@ const blogPosts = [
     excerpt: 'Soft touches and gentle caresses reveal the power of tenderness in the most unexpected moments...',
     date: '2023-12-28',
     readTime: '5 min read',
-    coverImage: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=400&fit=crop&crop=center&blur=5'
+    coverImage: '/lovable-uploads/6adc0d19-6e9f-4406-9928-0f48ba4c0a89.png'
   },
   {
     id: 'electric-dreams',
@@ -61,7 +62,7 @@ const blogPosts = [
     excerpt: 'When technology meets desire, the boundaries between reality and fantasy become beautifully blurred...',
     date: '2023-12-25',
     readTime: '9 min read',
-    coverImage: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop&crop=center&blur=5'
+    coverImage: '/lovable-uploads/12d3ad6d-7d26-402f-959e-bbae780d76f7.png'
   },
   {
     id: 'desert-heat',
@@ -69,7 +70,7 @@ const blogPosts = [
     excerpt: 'In the scorching embrace of endless dunes, passion burns hotter than the midday sun...',
     date: '2023-12-22',
     readTime: '7 min read',
-    coverImage: 'https://images.unsplash.com/photo-1499557354967-2b2d8910bcca?w=400&h=400&fit=crop&crop=center&blur=5'
+    coverImage: '/lovable-uploads/de22f24f-afc2-4248-93b4-d0e36e983133.png'
   },
   {
     id: 'golden-hour',
@@ -77,7 +78,7 @@ const blogPosts = [
     excerpt: 'As twilight paints the sky in shades of amber, two souls discover the magic of perfect timing...',
     date: '2023-12-20',
     readTime: '6 min read',
-    coverImage: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&h=400&fit=crop&crop=center&blur=5'
+    coverImage: '/lovable-uploads/319dac6b-e802-4607-9db4-68b7917901bc.png'
   },
   {
     id: 'feline-grace',
@@ -85,7 +86,7 @@ const blogPosts = [
     excerpt: 'With movements like liquid silk and eyes that hold ancient secrets, she prowls through the night...',
     date: '2023-12-18',
     readTime: '8 min read',
-    coverImage: 'https://images.unsplash.com/photo-1503104834685-7205e8607eb9?w=400&h=400&fit=crop&crop=center&blur=5'
+    coverImage: '/lovable-uploads/3e051e23-9e35-4a6a-ad25-9c06498ac132.png'
   },
   {
     id: 'neon-nights',
@@ -93,7 +94,7 @@ const blogPosts = [
     excerpt: 'City lights reflect off rain-soaked streets as strangers become lovers in the urban maze...',
     date: '2023-12-15',
     readTime: '11 min read',
-    coverImage: 'https://images.unsplash.com/photo-1520637836862-4d197d17c55a?w=400&h=400&fit=crop&crop=center&blur=5'
+    coverImage: '/lovable-uploads/f6ef997f-bda9-4746-99ba-bee0982205bd.png'
   },
   {
     id: 'mirror-mirror',
@@ -101,7 +102,7 @@ const blogPosts = [
     excerpt: 'Reflections reveal more than just physical beauty as she discovers her deepest desires...',
     date: '2023-12-12',
     readTime: '6 min read',
-    coverImage: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=400&fit=crop&crop=center&blur=5'
+    coverImage: '/lovable-uploads/3ad660f5-65ea-4458-b6e6-f183c25b62c9.png'
   },
   {
     id: 'ocean-waves',
@@ -109,7 +110,7 @@ const blogPosts = [
     excerpt: 'The rhythmic crash of waves against the shore mirrors the passionate rhythm of two hearts as one...',
     date: '2023-12-10',
     readTime: '9 min read',
-    coverImage: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop&crop=center&blur=5'
+    coverImage: '/lovable-uploads/6e65b3bb-094b-465a-96f4-75b9a7e48e20.png'
   },
   {
     id: 'sapphire-dreams',
@@ -117,7 +118,7 @@ const blogPosts = [
     excerpt: 'Blue as the deepest ocean, her eyes hold promises of adventures that exist only in dreams...',
     date: '2023-12-08',
     readTime: '7 min read',
-    coverImage: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=400&h=400&fit=crop&crop=center&blur=5'
+    coverImage: '/lovable-uploads/ec99a2b4-5e20-4d72-adb1-33a607045350.png'
   },
   {
     id: 'ivory-tower',
@@ -125,7 +126,7 @@ const blogPosts = [
     excerpt: 'High above the world in her pristine sanctuary, she learns that perfection has its own temptations...',
     date: '2023-12-05',
     readTime: '10 min read',
-    coverImage: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=center&blur=5'
+    coverImage: '/lovable-uploads/6adc0d19-6e9f-4406-9928-0f48ba4c0a89.png'
   }
 ];
 
@@ -170,22 +171,25 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-black via-red-950 to-black py-20 px-4">
+      <section className="relative bg-gradient-to-br from-black via-pink-950 to-black py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-red-500 to-red-300 bg-clip-text text-transparent">
-            RabitFapit
-          </h1>
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <Rabbit className="w-12 h-12 text-pink-400 fill-pink-400" />
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-pink-500 to-pink-300 bg-clip-text text-transparent">
+              RabitFapit
+            </h1>
+          </div>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
             Where shadows dance with desire and secrets find their voice
           </p>
-          <div className="w-24 h-1 bg-red-600 mx-auto"></div>
+          <div className="w-24 h-1 bg-pink-600 mx-auto"></div>
         </div>
       </section>
 
       {/* Blog Posts Section */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center text-red-400">Latest</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center text-pink-400">Latest</h2>
           
           <SearchBar onSearch={handleSearch} />
           
@@ -198,24 +202,24 @@ const Index = () => {
               {filteredPosts.map((post) => (
                 <article key={post.id} className="group">
                   <Link to={`/post/${post.id}`} className="block">
-                    <div className="bg-gradient-to-br from-gray-900 to-red-950/20 border border-red-900/30 rounded-lg overflow-hidden hover:border-red-600/50 transition-all duration-300 hover:shadow-lg hover:shadow-red-900/20">
+                    <div className="bg-white border border-pink-200/30 rounded-lg overflow-hidden hover:border-pink-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-pink-400/20">
                       {/* Square Cover Image with Play Button */}
                       <div className="w-full aspect-square relative">
                         <img 
                           src={post.coverImage} 
                           alt={post.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover filter blur-sm"
                         />
                         <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-all duration-300">
-                          <div className="w-16 h-16 bg-red-600/90 rounded-full flex items-center justify-center group-hover:bg-red-500 transition-all duration-300 backdrop-blur-sm">
+                          <div className="w-16 h-16 bg-pink-600/90 rounded-full flex items-center justify-center group-hover:bg-pink-500 transition-all duration-300 backdrop-blur-sm">
                             <Play className="w-8 h-8 text-white ml-1" fill="white" />
                           </div>
                         </div>
                       </div>
                       
                       {/* Content */}
-                      <div className="p-6">
-                        <div className="flex items-center gap-4 text-sm text-gray-400 mb-3">
+                      <div className="p-6 bg-white">
+                        <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
                           <time>{new Date(post.date).toLocaleDateString('en-US', { 
                             year: 'numeric', 
                             month: 'long', 
@@ -225,15 +229,15 @@ const Index = () => {
                           <span>{post.readTime}</span>
                         </div>
                         
-                        <h3 className="text-xl font-bold text-red-300 mb-3 group-hover:text-red-200 transition-colors">
+                        <h3 className="text-xl font-bold text-pink-600 mb-3 group-hover:text-pink-500 transition-colors">
                           {post.title}
                         </h3>
                         
-                        <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                        <p className="text-gray-600 text-sm leading-relaxed mb-4">
                           {post.excerpt}
                         </p>
                         
-                        <div className="flex items-center text-red-400 font-semibold group-hover:text-red-300 transition-colors">
+                        <div className="flex items-center text-pink-500 font-semibold group-hover:text-pink-400 transition-colors">
                           <span>Read More</span>
                           <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
