@@ -170,6 +170,21 @@ const Index = () => {
     <div className="min-h-screen bg-black text-gray-100">
       <Navigation />
       
+      {/* Large Leaderboard Ad */}
+      <div className="w-full flex justify-center py-4 bg-gray-900/50">
+        <script type="text/javascript" dangerouslySetInnerHTML={{
+          __html: `
+            var a = document.createElement('div'); a.id = '_2609856'; a.className = '_3eca654a6';
+            var b = document.currentScript; if (b.parentElement) b.parentElement.insertBefore(a, b);
+            var c = document.getElementsByTagName('head')[0];
+            var d = document.createElement('script'); d.type = "text/javascript"; d.src = "//prscripts.com/d/?resource=pubJS";
+            if (!window.prpubappended && !window.prpubappendedlocal) {
+            window.prpubappendedlocal = true; c.appendChild(d);
+            }
+          `
+        }} />
+      </div>
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-black via-pink-950 to-black py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -186,70 +201,205 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Leaderboard Ad */}
+      <div className="w-full flex justify-center py-4 bg-gray-900/30">
+        <script type="text/javascript" dangerouslySetInnerHTML={{
+          __html: `
+            var a = document.createElement('div'); a.id = '_2609851'; a.className = '_3eca654a6';
+            var b = document.currentScript; if (b.parentElement) b.parentElement.insertBefore(a, b);
+            var c = document.getElementsByTagName('head')[0];
+            var d = document.createElement('script'); d.type = "text/javascript"; d.src = "//prscripts.com/d/?resource=pubJS";
+            if (!window.prpubappended && !window.prpubappendedlocal) {
+            window.prpubappendedlocal = true; c.appendChild(d);
+            }
+          `
+        }} />
+      </div>
+
       {/* Blog Posts Section */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center text-pink-400">Latest</h2>
-          
-          <SearchBar onSearch={handleSearch} />
-          
-          {filteredPosts.length === 0 ? (
-            <div className="text-center py-12">
-              <p className="text-gray-400 text-lg">No posts found matching your search.</p>
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Sidebar with ads */}
+            <div className="lg:w-64 flex-shrink-0 space-y-8">
+              {/* Wide Skyscraper Ad */}
+              <div className="flex justify-center">
+                <script type="text/javascript" dangerouslySetInnerHTML={{
+                  __html: `
+                    var a = document.createElement('div'); a.id = '_2609848'; a.className = '_3eca654a6';
+                    var b = document.currentScript; if (b.parentElement) b.parentElement.insertBefore(a, b);
+                    var c = document.getElementsByTagName('head')[0];
+                    var d = document.createElement('script'); d.type = "text/javascript"; d.src = "//prscripts.com/d/?resource=pubJS";
+                    if (!window.prpubappended && !window.prpubappendedlocal) {
+                    window.prpubappendedlocal = true; c.appendChild(d);
+                    }
+                  `
+                }} />
+              </div>
+
+              {/* Square Ad */}
+              <div className="flex justify-center">
+                <script type="text/javascript" dangerouslySetInnerHTML={{
+                  __html: `
+                    var a = document.createElement('div'); a.id = '_2609852'; a.className = '_3eca654a6';
+                    var b = document.currentScript; if (b.parentElement) b.parentElement.insertBefore(a, b);
+                    var c = document.getElementsByTagName('head')[0];
+                    var d = document.createElement('script'); d.type = "text/javascript"; d.src = "//prscripts.com/d/?resource=pubJS";
+                    if (!window.prpubappended && !window.prpubappendedlocal) {
+                    window.prpubappendedlocal = true; c.appendChild(d);
+                    }
+                  `
+                }} />
+              </div>
+
+              {/* Small Square Ad */}
+              <div className="flex justify-center">
+                <script type="text/javascript" dangerouslySetInnerHTML={{
+                  __html: `
+                    var a = document.createElement('div'); a.id = '_2609853'; a.className = '_3eca654a6';
+                    var b = document.currentScript; if (b.parentElement) b.parentElement.insertBefore(a, b);
+                    var c = document.getElementsByTagName('head')[0];
+                    var d = document.createElement('script'); d.type = "text/javascript"; d.src = "//prscripts.com/d/?resource=pubJS";
+                    if (!window.prpubappended && !window.prpubappendedlocal) {
+                    window.prpubappendedlocal = true; c.appendChild(d);
+                    }
+                  `
+                }} />
+              </div>
             </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredPosts.map((post) => (
-                <article key={post.id} className="group h-full">
-                  <Link to={`/post/${post.id}`} className="block h-full">
-                    <div className="bg-white border border-pink-200/30 rounded-lg overflow-hidden hover:border-pink-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-pink-400/20 h-full flex flex-col">
-                      {/* Square Cover Image with Play Button */}
-                      <div className="w-full aspect-square relative flex-shrink-0">
-                        <img 
-                          src={post.coverImage} 
-                          alt={post.title}
-                          className="w-full h-full object-cover filter blur-md"
-                        />
-                        <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-all duration-300">
-                          <div className="w-16 h-16 bg-pink-600/90 rounded-full flex items-center justify-center group-hover:bg-pink-500 transition-all duration-300 backdrop-blur-sm">
-                            <Play className="w-8 h-8 text-white ml-1" fill="white" />
+
+            {/* Main content */}
+            <div className="flex-1">
+              <h2 className="text-3xl font-bold mb-12 text-center text-pink-400">Latest</h2>
+              
+              <SearchBar onSearch={handleSearch} />
+              
+              {/* Rectangle Ad */}
+              <div className="w-full flex justify-center py-6">
+                <script type="text/javascript" dangerouslySetInnerHTML={{
+                  __html: `
+                    var a = document.createElement('div'); a.id = '_2609850'; a.className = '_3eca654a6';
+                    var b = document.currentScript; if (b.parentElement) b.parentElement.insertBefore(a, b);
+                    var c = document.getElementsByTagName('head')[0];
+                    var d = document.createElement('script'); d.type = "text/javascript"; d.src = "//prscripts.com/d/?resource=pubJS";
+                    if (!window.prpubappended && !window.prpubappendedlocal) {
+                    window.prpubappendedlocal = true; c.appendChild(d);
+                    }
+                  `
+                }} />
+              </div>
+              
+              {filteredPosts.length === 0 ? (
+                <div className="text-center py-12">
+                  <p className="text-gray-400 text-lg">No posts found matching your search.</p>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredPosts.map((post, index) => (
+                    <React.Fragment key={post.id}>
+                      <article className="group h-full">
+                        <Link to={`/post/${post.id}`} className="block h-full">
+                          <div className="bg-white border border-pink-200/30 rounded-lg overflow-hidden hover:border-pink-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-pink-400/20 h-full flex flex-col">
+                            {/* Square Cover Image with Play Button */}
+                            <div className="w-full aspect-square relative flex-shrink-0">
+                              <img 
+                                src={post.coverImage} 
+                                alt={post.title}
+                                className="w-full h-full object-cover filter blur-md"
+                              />
+                              <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-all duration-300">
+                                <div className="w-16 h-16 bg-pink-600/90 rounded-full flex items-center justify-center group-hover:bg-pink-500 transition-all duration-300 backdrop-blur-sm">
+                                  <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                                </div>
+                              </div>
+                            </div>
+                            
+                            {/* Content */}
+                            <div className="p-6 bg-white flex-grow flex flex-col">
+                              <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                                <time>{new Date(post.date).toLocaleDateString('en-US', { 
+                                  year: 'numeric', 
+                                  month: 'long', 
+                                  day: 'numeric' 
+                                })}</time>
+                                <span>•</span>
+                                <span>{post.readTime}</span>
+                              </div>
+                              
+                              <h3 className="text-xl font-bold text-pink-600 mb-3 group-hover:text-pink-500 transition-colors line-clamp-2">
+                                {post.title}
+                              </h3>
+                              
+                              <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
+                                {post.excerpt}
+                              </p>
+                              
+                              <div className="flex items-center text-pink-500 font-semibold group-hover:text-pink-400 transition-colors mt-auto pt-2">
+                                <span>Read More</span>
+                                <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
+                        </Link>
+                      </article>
                       
-                      {/* Content */}
-                      <div className="p-6 bg-white flex-grow flex flex-col">
-                        <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                          <time>{new Date(post.date).toLocaleDateString('en-US', { 
-                            year: 'numeric', 
-                            month: 'long', 
-                            day: 'numeric' 
-                          })}</time>
-                          <span>•</span>
-                          <span>{post.readTime}</span>
+                      {/* Insert ads every 6 posts */}
+                      {(index + 1) % 6 === 0 && index < filteredPosts.length - 1 && (
+                        <div className="col-span-full flex justify-center py-4">
+                          <script type="text/javascript" dangerouslySetInnerHTML={{
+                            __html: `
+                              var a = document.createElement('div'); a.id = '_2609854'; a.className = '_3eca654a6';
+                              var b = document.currentScript; if (b.parentElement) b.parentElement.insertBefore(a, b);
+                              var c = document.getElementsByTagName('head')[0];
+                              var d = document.createElement('script'); d.type = "text/javascript"; d.src = "//prscripts.com/d/?resource=pubJS";
+                              if (!window.prpubappended && !window.prpubappendedlocal) {
+                              window.prpubappendedlocal = true; c.appendChild(d);
+                              }
+                            `
+                          }} />
                         </div>
-                        
-                        <h3 className="text-xl font-bold text-pink-600 mb-3 group-hover:text-pink-500 transition-colors line-clamp-2">
-                          {post.title}
-                        </h3>
-                        
-                        <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
-                          {post.excerpt}
-                        </p>
-                        
-                        <div className="flex items-center text-pink-500 font-semibold group-hover:text-pink-400 transition-colors mt-auto pt-2">
-                          <span>Read More</span>
-                          <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                </article>
-              ))}
+                      )}
+                    </React.Fragment>
+                  ))}
+                </div>
+              )}
             </div>
-          )}
+
+            {/* Right sidebar with ads */}
+            <div className="lg:w-64 flex-shrink-0 space-y-8">
+              {/* Half Page Ad */}
+              <div className="flex justify-center">
+                <script type="text/javascript" dangerouslySetInnerHTML={{
+                  __html: `
+                    var a = document.createElement('div'); a.id = '_2609849'; a.className = '_3eca654a6';
+                    var b = document.currentScript; if (b.parentElement) b.parentElement.insertBefore(a, b);
+                    var c = document.getElementsByTagName('head')[0];
+                    var d = document.createElement('script'); d.type = "text/javascript"; d.src = "//prscripts.com/d/?resource=pubJS";
+                    if (!window.prpubappended && !window.prpubappendedlocal) {
+                    window.prpubappendedlocal = true; c.appendChild(d);
+                    }
+                  `
+                }} />
+              </div>
+
+              {/* Skyscraper Ad */}
+              <div className="flex justify-center">
+                <script type="text/javascript" dangerouslySetInnerHTML={{
+                  __html: `
+                    var a = document.createElement('div'); a.id = '_2609855'; a.className = '_3eca654a6';
+                    var b = document.currentScript; if (b.parentElement) b.parentElement.insertBefore(a, b);
+                    var c = document.getElementsByTagName('head')[0];
+                    var d = document.createElement('script'); d.type = "text/javascript"; d.src = "//prscripts.com/d/?resource=pubJS";
+                    if (!window.prpubappended && !window.prpubappendedlocal) {
+                    window.prpubappendedlocal = true; c.appendChild(d);
+                    }
+                  `
+                }} />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
