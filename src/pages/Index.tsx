@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Play, Rabbit } from 'lucide-react';
@@ -170,6 +169,21 @@ const Index = () => {
     <div className="min-h-screen bg-black text-gray-100">
       <Navigation />
       
+      {/* Top Navigation Banner Ad */}
+      <div className="w-full flex justify-center py-4 bg-gray-900/50">
+        <script type="text/javascript" dangerouslySetInnerHTML={{
+          __html: `
+            var a = document.createElement('div'); a.id = '_2609859'; a.className = '_3eca654a6';
+            var b = document.currentScript; if (b.parentElement) b.parentElement.insertBefore(a, b);
+            var c = document.getElementsByTagName('head')[0];
+            var d = document.createElement('script'); d.type = "text/javascript"; d.src = "//prscripts.com/d/?resource=pubJS";
+            if (!window.prpubappended && !window.prpubappendedlocal) {
+            window.prpubappendedlocal = true; c.appendChild(d);
+            }
+          `
+        }} />
+      </div>
+      
       {/* Top Banner Ad */}
       <div className="w-full flex justify-center py-4 bg-gray-900/50">
         <script type="text/javascript" dangerouslySetInnerHTML={{
@@ -220,8 +234,8 @@ const Index = () => {
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-12 gap-6">
-            {/* Left Sidebar */}
-            <div className="col-span-12 lg:col-span-2 space-y-6">
+            {/* Left Sidebar - Reduced from 2 to 1 column */}
+            <div className="col-span-12 lg:col-span-1 space-y-6">
               {/* Top Left Side Banner */}
               <div className="flex justify-center">
                 <script type="text/javascript" dangerouslySetInnerHTML={{
@@ -268,8 +282,8 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Main Content */}
-            <div className="col-span-12 lg:col-span-8">
+            {/* Main Content - Increased from 8 to 10 columns */}
+            <div className="col-span-12 lg:col-span-10">
               <h2 className="text-3xl font-bold mb-12 text-center text-pink-400">Latest</h2>
               
               <SearchBar onSearch={handleSearch} />
@@ -294,8 +308,8 @@ const Index = () => {
                   <p className="text-gray-400 text-lg">No posts found matching your search.</p>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 auto-rows-fr">
-                  {filteredPosts.map((post, index) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 auto-rows-fr">
+                  {filteredPosts.slice(0, Math.floor(filteredPosts.length / 2)).map((post, index) => (
                     <React.Fragment key={post.id}>
                       <article className="group h-full">
                         <Link to={`/post/${post.id}`} className="block h-full">
@@ -346,7 +360,7 @@ const Index = () => {
                       </article>
                       
                       {/* Insert ads every 6 posts */}
-                      {(index + 1) % 6 === 0 && index < filteredPosts.length - 1 && (
+                      {(index + 1) % 6 === 0 && index < Math.floor(filteredPosts.length / 2) - 1 && (
                         <div className="col-span-full flex justify-center py-4">
                           <script type="text/javascript" dangerouslySetInnerHTML={{
                             __html: `
@@ -365,10 +379,99 @@ const Index = () => {
                   ))}
                 </div>
               )}
+
+              {/* Middle Banner Ad */}
+              <div className="w-full flex justify-center py-8">
+                <script type="text/javascript" dangerouslySetInnerHTML={{
+                  __html: `
+                    var a = document.createElement('div'); a.id = '_2609860'; a.className = '_3eca654a6';
+                    var b = document.currentScript; if (b.parentElement) b.parentElement.insertBefore(a, b);
+                    var c = document.getElementsByTagName('head')[0];
+                    var d = document.createElement('script'); d.type = "text/javascript"; d.src = "//prscripts.com/d/?resource=pubJS";
+                    if (!window.prpubappended && !window.prpubappendedlocal) {
+                    window.prpubappendedlocal = true; c.appendChild(d);
+                    }
+                  `
+                }} />
+              </div>
+
+              {/* Second Half of Posts */}
+              {filteredPosts.length > 0 && (
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 auto-rows-fr">
+                  {filteredPosts.slice(Math.floor(filteredPosts.length / 2)).map((post, index) => (
+                    <React.Fragment key={post.id}>
+                      <article className="group h-full">
+                        <Link to={`/post/${post.id}`} className="block h-full">
+                          <div className="bg-white border border-pink-200/30 rounded-lg overflow-hidden hover:border-pink-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-pink-400/20 h-full flex flex-col">
+                            {/* Square Cover Image with Play Button */}
+                            <div className="w-full aspect-square relative flex-shrink-0">
+                              <img 
+                                src={post.coverImage} 
+                                alt={post.title}
+                                className="w-full h-full object-cover filter blur-md"
+                              />
+                              <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-all duration-300">
+                                <div className="w-16 h-16 bg-pink-600/90 rounded-full flex items-center justify-center group-hover:bg-pink-500 transition-all duration-300 backdrop-blur-sm">
+                                  <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                                </div>
+                              </div>
+                            </div>
+                            
+                            {/* Content */}
+                            <div className="p-6 bg-white flex-grow flex flex-col">
+                              <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                                <time>{new Date(post.date).toLocaleDateString('en-US', { 
+                                  year: 'numeric', 
+                                  month: 'long', 
+                                  day: 'numeric' 
+                                })}</time>
+                                <span>•</span>
+                                <span>{post.readTime}</span>
+                              </div>
+                              
+                              <h3 className="text-xl font-bold text-pink-600 mb-3 group-hover:text-pink-500 transition-colors line-clamp-2">
+                                {post.title}
+                              </h3>
+                              
+                              <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
+                                {post.excerpt}
+                              </p>
+                              
+                              <div className="flex items-center text-pink-500 font-semibold group-hover:text-pink-400 transition-colors mt-auto pt-2">
+                                <span>Read More</span>
+                                <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </Link>
+                      </article>
+                      
+                      {/* Insert ads every 6 posts */}
+                      {(index + 1) % 6 === 0 && index < filteredPosts.slice(Math.floor(filteredPosts.length / 2)).length - 1 && (
+                        <div className="col-span-full flex justify-center py-4">
+                          <script type="text/javascript" dangerouslySetInnerHTML={{
+                            __html: `
+                              var a = document.createElement('div'); a.id = '_2609861'; a.className = '_3eca654a6';
+                              var b = document.currentScript; if (b.parentElement) b.parentElement.insertBefore(a, b);
+                              var c = document.getElementsByTagName('head')[0];
+                              var d = document.createElement('script'); d.type = "text/javascript"; d.src = "//prscripts.com/d/?resource=pubJS";
+                              if (!window.prpubappended && !window.prpubappendedlocal) {
+                              window.prpubappendedlocal = true; c.appendChild(d);
+                              }
+                            `
+                          }} />
+                        </div>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </div>
+              )}
             </div>
 
-            {/* Right Sidebar */}
-            <div className="col-span-12 lg:col-span-2 space-y-6">
+            {/* Right Sidebar - Reduced from 2 to 1 column */}
+            <div className="col-span-12 lg:col-span-1 space-y-6">
               {/* Top Right Side Banner */}
               <div className="flex justify-center">
                 <script type="text/javascript" dangerouslySetInnerHTML={{
