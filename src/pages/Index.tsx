@@ -52,34 +52,117 @@ const Index = () => {
     <div className="min-h-screen bg-black text-gray-100">
       <Navigation />
       
-      {/* Top Navigation Banner Ad */}
-      <AdBanner adId="_2609859" className="py-4 bg-gray-900/50" />
+      {/* Top Navigation Banner Ad - Responsive */}
+      <div className="w-full px-2 sm:px-4">
+        <AdBanner 
+          adId="_2609859" 
+          label="TOP NAV BANNER" 
+          className="py-3 sm:py-4" 
+        />
+      </div>
       
-      {/* Top Banner Ad */}
-      <AdBanner adId="_2609856" className="py-4 bg-gray-900/50" />
+      {/* Main Top Banner Ad - Responsive */}
+      <div className="w-full px-2 sm:px-4">
+        <AdBanner 
+          adId="_2609856" 
+          label="MAIN TOP BANNER" 
+          className="py-3 sm:py-4" 
+        />
+      </div>
 
       <HeroSection />
 
-      {/* After Hero Banner Ad */}
-      <AdBanner adId="_2609851" className="py-4 bg-gray-900/30" />
+      {/* After Hero Banner Ad - Responsive */}
+      <div className="w-full px-2 sm:px-4">
+        <AdBanner 
+          adId="_2609851" 
+          label="POST-HERO BANNER" 
+          className="py-4 sm:py-6" 
+        />
+      </div>
 
-      {/* Blog Posts Section */}
-      <section className="py-8 sm:py-12 lg:py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-12 gap-4 lg:gap-6">
-            {/* Left Sidebar - Hidden on mobile and tablet */}
-            <div className="hidden lg:block lg:col-span-1">
+      {/* Main Content Section - Improved Responsive Layout */}
+      <section className="py-6 sm:py-8 md:py-12 lg:py-16 px-2 sm:px-4 lg:px-6">
+        <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto">
+          
+          {/* Mobile/Tablet Layout (< lg) */}
+          <div className="block lg:hidden">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-center text-pink-400">
+              Latest
+            </h2>
+            
+            <div className="max-w-2xl mx-auto mb-6">
+              <SearchBar onSearch={handleSearch} />
+            </div>
+            
+            {/* Mobile Content Banner Ad */}
+            <div className="mb-6">
+              <AdBanner 
+                adId="_2609850" 
+                label="MOBILE CONTENT BANNER" 
+                className="py-4" 
+              />
+            </div>
+            
+            {filteredPosts.length === 0 ? (
+              <div className="text-center py-12">
+                <p className="text-gray-400 text-lg">No posts found matching your search.</p>
+              </div>
+            ) : (
+              <>
+                {/* First Half of Posts - Mobile */}
+                <BlogGrid 
+                  posts={filteredPosts}
+                  startIndex={0}
+                  endIndex={firstHalf}
+                  adIds={['_2609854']}
+                />
+
+                {/* Middle Banner Ad - Mobile */}
+                <div className="my-8">
+                  <AdBanner 
+                    adId="_2609860" 
+                    label="MOBILE MIDDLE BANNER" 
+                    className="py-4" 
+                  />
+                </div>
+
+                {/* Second Half of Posts - Mobile */}
+                <BlogGrid 
+                  posts={filteredPosts}
+                  startIndex={firstHalf}
+                  adIds={['_2609861']}
+                />
+              </>
+            )}
+          </div>
+
+          {/* Desktop Layout (lg+) */}
+          <div className="hidden lg:grid lg:grid-cols-12 lg:gap-6 xl:gap-8">
+            
+            {/* Left Sidebar - Desktop Only */}
+            <div className="lg:col-span-2 xl:col-span-2">
               <SidebarAds side="left" />
             </div>
 
-            {/* Main Content */}
-            <div className="col-span-12 lg:col-span-10">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center text-pink-400">Latest</h2>
+            {/* Main Content - Desktop */}
+            <div className="lg:col-span-8 xl:col-span-8">
+              <h2 className="text-3xl xl:text-4xl font-bold mb-8 xl:mb-12 text-center text-pink-400">
+                Latest
+              </h2>
               
-              <SearchBar onSearch={handleSearch} />
+              <div className="max-w-3xl mx-auto mb-8">
+                <SearchBar onSearch={handleSearch} />
+              </div>
               
-              {/* Content Area Banner Ad */}
-              <AdBanner adId="_2609850" className="py-6 mb-8" />
+              {/* Desktop Content Area Banner Ad */}
+              <div className="mb-8">
+                <AdBanner 
+                  adId="_2609850" 
+                  label="DESKTOP CONTENT BANNER" 
+                  className="py-6" 
+                />
+              </div>
               
               {filteredPosts.length === 0 ? (
                 <div className="text-center py-12">
@@ -87,7 +170,7 @@ const Index = () => {
                 </div>
               ) : (
                 <>
-                  {/* First Half of Posts */}
+                  {/* First Half of Posts - Desktop */}
                   <BlogGrid 
                     posts={filteredPosts}
                     startIndex={0}
@@ -95,10 +178,16 @@ const Index = () => {
                     adIds={['_2609854']}
                   />
 
-                  {/* Middle Banner Ad */}
-                  <AdBanner adId="_2609860" className="py-8 my-8" />
+                  {/* Middle Banner Ad - Desktop */}
+                  <div className="my-10">
+                    <AdBanner 
+                      adId="_2609860" 
+                      label="DESKTOP MIDDLE BANNER" 
+                      className="py-6" 
+                    />
+                  </div>
 
-                  {/* Second Half of Posts */}
+                  {/* Second Half of Posts - Desktop */}
                   <BlogGrid 
                     posts={filteredPosts}
                     startIndex={firstHalf}
@@ -108,16 +197,22 @@ const Index = () => {
               )}
             </div>
 
-            {/* Right Sidebar - Hidden on mobile and tablet */}
-            <div className="hidden lg:block lg:col-span-1">
+            {/* Right Sidebar - Desktop Only */}
+            <div className="lg:col-span-2 xl:col-span-2">
               <SidebarAds side="right" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Bottom Banner Ad */}
-      <AdBanner adId="_2609858" className="py-6 bg-gray-900/30" />
+      {/* Bottom Banner Ad - Responsive */}
+      <div className="w-full px-2 sm:px-4">
+        <AdBanner 
+          adId="_2609858" 
+          label="BOTTOM BANNER" 
+          className="py-4 sm:py-6" 
+        />
+      </div>
 
       <Footer />
     </div>

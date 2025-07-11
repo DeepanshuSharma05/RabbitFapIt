@@ -13,9 +13,15 @@ const SidebarAds = ({ side }: SidebarAdsProps) => {
   const adIds = side === 'left' ? leftAdIds : rightAdIds;
 
   return (
-    <div className="hidden lg:flex lg:flex-col space-y-6">
-      {adIds.map((adId) => (
-        <AdBanner key={adId} adId={adId} />
+    <div className="sticky top-4 space-y-4">
+      {adIds.map((adId, index) => (
+        <div key={adId} className="w-full max-w-[160px]">
+          <AdBanner 
+            adId={adId} 
+            label={`${side.toUpperCase()} SIDEBAR ${index + 1}`}
+            className="min-h-[250px]"
+          />
+        </div>
       ))}
     </div>
   );
