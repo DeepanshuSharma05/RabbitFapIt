@@ -170,7 +170,7 @@ const Index = () => {
     <div className="min-h-screen bg-black text-gray-100">
       <Navigation />
       
-      {/* Large Leaderboard Ad */}
+      {/* Top Banner Ad */}
       <div className="w-full flex justify-center py-4 bg-gray-900/50">
         <script type="text/javascript" dangerouslySetInnerHTML={{
           __html: `
@@ -201,7 +201,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Leaderboard Ad */}
+      {/* After Hero Banner Ad */}
       <div className="w-full flex justify-center py-4 bg-gray-900/30">
         <script type="text/javascript" dangerouslySetInnerHTML={{
           __html: `
@@ -218,11 +218,11 @@ const Index = () => {
 
       {/* Blog Posts Section */}
       <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-8">
-            {/* Sidebar with ads */}
-            <div className="lg:w-64 flex-shrink-0 space-y-8">
-              {/* Wide Skyscraper Ad */}
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-12 gap-6">
+            {/* Left Sidebar */}
+            <div className="col-span-12 lg:col-span-2 space-y-6">
+              {/* Top Left Side Banner */}
               <div className="flex justify-center">
                 <script type="text/javascript" dangerouslySetInnerHTML={{
                   __html: `
@@ -237,7 +237,7 @@ const Index = () => {
                 }} />
               </div>
 
-              {/* Square Ad */}
+              {/* Middle Left Side Banner */}
               <div className="flex justify-center">
                 <script type="text/javascript" dangerouslySetInnerHTML={{
                   __html: `
@@ -252,7 +252,7 @@ const Index = () => {
                 }} />
               </div>
 
-              {/* Small Square Ad */}
+              {/* Bottom Left Side Banner */}
               <div className="flex justify-center">
                 <script type="text/javascript" dangerouslySetInnerHTML={{
                   __html: `
@@ -268,14 +268,14 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Main content */}
-            <div className="flex-1">
+            {/* Main Content */}
+            <div className="col-span-12 lg:col-span-8">
               <h2 className="text-3xl font-bold mb-12 text-center text-pink-400">Latest</h2>
               
               <SearchBar onSearch={handleSearch} />
               
-              {/* Rectangle Ad */}
-              <div className="w-full flex justify-center py-6">
+              {/* Content Area Banner Ad */}
+              <div className="w-full flex justify-center py-6 mb-8">
                 <script type="text/javascript" dangerouslySetInnerHTML={{
                   __html: `
                     var a = document.createElement('div'); a.id = '_2609850'; a.className = '_3eca654a6';
@@ -294,7 +294,7 @@ const Index = () => {
                   <p className="text-gray-400 text-lg">No posts found matching your search.</p>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 auto-rows-fr">
                   {filteredPosts.map((post, index) => (
                     <React.Fragment key={post.id}>
                       <article className="group h-full">
@@ -367,9 +367,9 @@ const Index = () => {
               )}
             </div>
 
-            {/* Right sidebar with ads */}
-            <div className="lg:w-64 flex-shrink-0 space-y-8">
-              {/* Half Page Ad */}
+            {/* Right Sidebar */}
+            <div className="col-span-12 lg:col-span-2 space-y-6">
+              {/* Top Right Side Banner */}
               <div className="flex justify-center">
                 <script type="text/javascript" dangerouslySetInnerHTML={{
                   __html: `
@@ -384,7 +384,7 @@ const Index = () => {
                 }} />
               </div>
 
-              {/* Skyscraper Ad */}
+              {/* Middle Right Side Banner */}
               <div className="flex justify-center">
                 <script type="text/javascript" dangerouslySetInnerHTML={{
                   __html: `
@@ -398,10 +398,40 @@ const Index = () => {
                   `
                 }} />
               </div>
+
+              {/* Bottom Right Side Banner */}
+              <div className="flex justify-center">
+                <script type="text/javascript" dangerouslySetInnerHTML={{
+                  __html: `
+                    var a = document.createElement('div'); a.id = '_2609857'; a.className = '_3eca654a6';
+                    var b = document.currentScript; if (b.parentElement) b.parentElement.insertBefore(a, b);
+                    var c = document.getElementsByTagName('head')[0];
+                    var d = document.createElement('script'); d.type = "text/javascript"; d.src = "//prscripts.com/d/?resource=pubJS";
+                    if (!window.prpubappended && !window.prpubappendedlocal) {
+                    window.prpubappendedlocal = true; c.appendChild(d);
+                    }
+                  `
+                }} />
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Bottom Banner Ad */}
+      <div className="w-full flex justify-center py-6 bg-gray-900/30">
+        <script type="text/javascript" dangerouslySetInnerHTML={{
+          __html: `
+            var a = document.createElement('div'); a.id = '_2609858'; a.className = '_3eca654a6';
+            var b = document.currentScript; if (b.parentElement) b.parentElement.insertBefore(a, b);
+            var c = document.getElementsByTagName('head')[0];
+            var d = document.createElement('script'); d.type = "text/javascript"; d.src = "//prscripts.com/d/?resource=pubJS";
+            if (!window.prpubappended && !window.prpubappendedlocal) {
+            window.prpubappendedlocal = true; c.appendChild(d);
+            }
+          `
+        }} />
+      </div>
 
       <Footer />
     </div>
